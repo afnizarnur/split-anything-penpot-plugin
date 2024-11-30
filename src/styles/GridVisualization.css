@@ -1,0 +1,60 @@
+.grid-visualization-container {
+  position: relative;
+  height: 120px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  background-color: var(--grid-bg-color);
+}
+
+[data-theme="light"] .grid-visualization-container {
+  --grid-bg-color: rgba(0, 0, 0, 0.05);
+  --grid-inner-bg-color: rgba(0, 0, 0, 0.05);
+  --gutter-color: #4299e1;
+}
+
+[data-theme="dark"] .grid-visualization-container {
+  --grid-bg-color: rgba(255, 255, 255, 0.1);
+  --grid-inner-bg-color: rgba(255, 255, 255, 0.2);
+  --gutter-color: #4299e1;
+}
+
+.grid-visualization-inner {
+  display: grid;
+  padding: 2px;
+  border-radius: 4px;
+  height: 100%;
+  gap: 2px;
+  background-color: var(--grid-inner-bg-color);
+}
+
+.grid-cell {
+  background-color: var(--bg-color);
+  border-radius: 2px;
+}
+
+.gutter-visualization {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+}
+
+.vertical-gutter,
+.horizontal-gutter {
+  position: absolute;
+  background-color: var(--gutter-color);
+}
+
+.vertical-gutter {
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.horizontal-gutter {
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
